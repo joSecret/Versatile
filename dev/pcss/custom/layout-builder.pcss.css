@@ -1,0 +1,28 @@
+.layout__region {
+  --_pb: 60px;
+
+  & > .block {
+    --_lb-block_pb: var(--lb-block_pb, 60px);
+
+    @media (--lg) {
+      --_lb-block_pb_lg: var(--lb-block_pb_lg, var(--lb-block_pb, 100px));
+    }
+
+    padding-block: var(--_lb-block_pb);
+  }
+
+  .lb-b--label_pb-0 {
+    --lb-block_pb: 0px;
+  }
+
+  .lb-b--label_pb-60 {
+    --lb-block_pb: 30px;
+    --lb-block_pb: 60px;
+  }
+
+  .lb-b--label_center {
+    .block--title {
+      text-align: center;
+    }
+  }
+}

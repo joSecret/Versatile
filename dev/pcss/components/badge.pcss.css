@@ -1,0 +1,42 @@
+:where(.badge) {
+  --_badge-bc: rgba(from var(--badge-exc, var(--c-gray-600)) r g b / 0.1);
+
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  padding: var(--badge-pb, 4px) var(--badge-pi, 10px);
+  font-size: var(--badge-fs, var(--fs-sm));
+  font-weight: var(--badge-fw, var(--fw-medium));
+  color: var(--_badge-c, var(--c-gray-600));
+  background-color: var(--badge-bg, transparent);
+  border-radius: var(--badge-br, var(--br-pill));
+
+  display: inline-flex;
+  line-height: 20px;
+  border: var(--badge-bw, 1px) solid var(--_badge-bc);
+
+  &:empty {
+    display: none;
+  }
+}
+
+.badge-primary {
+  --badge-exc: var(--c-primary);
+  --badge-bg: var(--_badge-bc);
+  --badge-pb: 5px;
+  --badge-bw: 0px;
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+a.badge {
+  --link-d: none;
+  --link-d_h: none;
+  --link_c: var(--_badge-c, var(--c-gray-600));
+}

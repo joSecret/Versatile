@@ -1,0 +1,42 @@
+name: Versatile Theme
+type: theme
+description: "Base theme for Versatile"
+core_version_requirement: ^9 || ^10 || ^11
+base theme: false
+
+ckeditor5-stylesheets:
+  - css/vars.css
+  - css/type.css
+  - css/ckeditor.css
+
+libraries:
+  - versatile/global-styling
+  - versatile/theme-fonts
+
+libraries-override:
+  better_exposed_filters/select_all_none:
+    js:
+      js/bef_select_all_none.js: js/modules/better_exposed_filters/bef_select_all_none.js
+
+  colorbox/stockholmsyndrome:
+    css:
+      theme:
+        styles/stockholmsyndrome/colorbox_style.css: css/versatile/colorbox-stockholmsyndrome.css
+
+stylesheets-remove:
+  - "@classy/css/components/tabs.css"
+
+regions:
+  top_page: "Page Top"
+  branding: "Branding"
+  nav_main: "Main navigation region"
+  nav_additional: "Additional navigation region (eg search form, social icons, etc)"
+  header: Header
+  hero: "Hero (full width)"
+  highlighted: Highlighted
+  content: "Main content"
+  sidebar_first: "Sidebar first"
+  sidebar_second: "Sidebar second"
+  footer: Footer
+  footer_social: "Footer social"
+  disable_region: "Disabled Region"

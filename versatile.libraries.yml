@@ -1,0 +1,690 @@
+# Libraries for the configuration the versatile theme.
+global-styling:
+  css:
+    theme:
+      css/drupal/heights.css: {}
+      css/fonts.css: { minified: true }
+      fonts/icon/Icon.css: { minified: true }
+      css/vars.css: { minified: true }
+      css/api.css: { minified: true }
+      css/reboot.css: { minified: true }
+      css/type.css: { minified: true }
+      css/images.css: { minified: true }
+      css/containers.css: { minified: true }
+      css/grid.css: { minified: true }
+      css/buttons.css: { minified: true }
+      css/transitions.css: { minified: true }
+      css/helpers.css: { minified: true }
+
+# Old.
+bootstrap4:
+  js:
+    https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+swiper:
+  css:
+    theme:
+      css/components/custom/swiper/swiper-bundle.css: {}
+  js:
+    templates/components/custom/swiper/swiper.min.js: { minified: true }
+  dependencies:
+    - core/drupal
+
+theme-fonts:
+  css:
+    theme:
+      "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap":
+        { type: external, minified: true }
+
+bs_dom_data:
+  js:
+    js/bootstrap/dom/data.js: { minified: true }
+
+bs_dom_event_handler:
+  js:
+    js/bootstrap/dom/event-handler.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_index
+
+bs_dom_manipulator:
+  js:
+    js/bootstrap/dom/manipulator.js: { minified: true }
+
+bs_dom_selector_engine:
+  js:
+    js/bootstrap/dom/selector-engine.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_index
+
+bs_util_backdrop:
+  js:
+    js/bootstrap/util/backdrop.js: { minified: true }
+  dependencies:
+    - versatile/bs_dom_event_handler
+    - versatile/bs_util_index
+    - versatile/bs_util_config
+
+bs_util_component_functions:
+  js:
+    js/bootstrap/util/component-functions.js: { minified: true }
+  dependencies:
+    - versatile/bs_dom_event_handler
+    - versatile/bs_util_index
+
+bs_util_config:
+  js:
+    js/bootstrap/util/config.js: { minified: true }
+  dependencies:
+    - versatile/bs_dom_manipulator
+    - versatile/bs_util_index
+
+bs_util_focustrap:
+  js:
+    js/bootstrap/util/focustrap.js: { minified: true }
+  dependencies:
+    - versatile/bs_dom_event_handler
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_util_config
+
+bs_util_index:
+  js:
+    js/bootstrap/util/index.js: { minified: true }
+
+bs_util_sanitizer:
+  js:
+    js/bootstrap/util/sanitizer.js: { minified: true }
+
+bs_util_scrollbar:
+  js:
+    js/bootstrap/util/scrollbar.js: { minified: true }
+  dependencies:
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_dom_manipulator
+    - versatile/bs_util_index
+
+bs_util_swipe:
+  js:
+    js/bootstrap/util/swipe.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_config
+    - versatile/bs_dom_event_handler
+    - versatile/bs_util_index
+
+bs_util_template_factory:
+  js:
+    js/bootstrap/util/template-factory.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_sanitizer
+    - versatile/bs_util_index
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_util_config
+
+bs_base_component:
+  js:
+    js/bootstrap/base-component.js: { minified: true }
+  dependencies:
+    - versatile/bs_dom_data
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_util_config
+
+# Components.
+accordion:
+  css:
+    component:
+      css/components/accordion.css: {}
+  dependencies:
+    - versatile/collapse
+
+badge:
+  css:
+    component:
+      css/components/badge.css: {}
+
+breadcrumb:
+  css:
+    component:
+      css/components/breadcrumb.css: {}
+
+button:
+  js:
+    js/bootstrap/button.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_base_component
+
+button-group:
+  css:
+    component:
+      css/components/button-group.css: {}
+
+card:
+  css:
+    component:
+      css/components/card.css: {}
+
+carousel:
+  css:
+    component:
+      css/components/carousel.css: {}
+  js:
+    js/bootstrap/carousel.js: {}
+  dependencies:
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_dom_manipulator
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_util_swipe
+    - versatile/bs_base_component
+
+close:
+  css:
+    component:
+      css/components/close.css: {}
+
+collapse:
+  js:
+    js/bootstrap/collapse.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_base_component
+
+dropdowns:
+  css:
+    component:
+      css/components/dropdowns.css: {}
+  js:
+    js/bootstrap/dropdown.js: { minified: true }
+  dependencies:
+    - versatile/popover
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_dom_manipulator
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_base_component
+
+forms:
+  css:
+    component:
+      css/components/forms.css: {}
+      css/drupal/select2.css: {}
+
+list-group:
+  css:
+    component:
+      css/components/list-group.css: {}
+
+modal:
+  css:
+    component:
+      css/components/modal.css: {}
+  js:
+    js/bootstrap/modal.js: { minified: true }
+  dependencies:
+    - versatile/close
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_util_scrollbar
+    - versatile/bs_base_component
+    - versatile/bs_util_backdrop
+    - versatile/bs_util_focustrap
+    - versatile/bs_util_component_functions
+
+offcanvas:
+  js:
+    js/bootstrap/offcanvas.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_index
+    - versatile/bs_util_scrollbar
+    - versatile/bs_dom_event_handler
+    - versatile/bs_base_component
+    - versatile/bs_util_backdrop
+    - versatile/bs_util_focustrap
+    - versatile/bs_util_component_functions
+
+pagination:
+  css:
+    component:
+      css/components/pagination.css: {}
+
+popover:
+  css:
+    component:
+      css/components/popover.css: {}
+  js:
+    js/bootstrap/popover.js: { minified: true }
+  dependencies:
+    - versatile/tooltip
+    - versatile/bs_util_index
+
+progress:
+  css:
+    component:
+      css/components/progress.css: {}
+
+scrollspy:
+  js:
+    js/bootstrap/scrollspy.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_base_component
+
+spinner:
+  css:
+    component:
+      css/components/spinner.css: {}
+
+table:
+  css:
+    component:
+      css/components/table.css: {}
+
+toast:
+  css:
+    component:
+      css/components/toast.css: {}
+  js:
+    js/bootstrap/toast.js: { minified: true }
+  dependencies:
+    - versatile/close
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_base_component
+    - versatile/bs_util_component_functions
+
+tab:
+  js:
+    js/bootstrap/tab.js: { minified: true }
+  dependencies:
+    - versatile/bs_util_index
+    - versatile/bs_dom_event_handler
+    - versatile/bs_dom_selector_engine
+    - versatile/bs_base_component
+
+popper:
+  js:
+    js/bootstrap/popper.js: {}
+
+tooltip:
+  css:
+    component:
+      css/components/tooltip.css: {}
+  js:
+    js/bootstrap/tooltip.js: { minified: true }
+  dependencies:
+    - versatile/popper
+    - versatile/bs_util_index
+    - versatile/bs_util_sanitizer
+    - versatile/bs_dom_event_handler
+    - versatile/bs_dom_manipulator
+    - versatile/bs_base_component
+    - versatile/bs_util_template_factory
+
+# Section
+s--header:
+  css:
+    component:
+      css/components/sections/header/header.css: { minified: true }
+  js:
+    templates/components/sections/header/script.js: { minified: false }
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+# Navigation.
+nav:
+  css:
+    component:
+      css/navigation/menu.css: { minified: true }
+  dependencies:
+    - versatile/dropdowns
+
+# Custom library
+## Region.
+versatile--r--top-page:
+  css:
+    component:
+      css/components/region/top-page/style.css: {}
+
+versatile--r--nav-main:
+  css:
+    component:
+      css/components/region/nav-main/style.css: { minified: true }
+      css/components/region/nav-main/custom.css: { minified: true }
+
+versatile--r--nav-additional:
+  css:
+    component:
+      css/components/region/nav-additional/style.css: { minified: true }
+
+versatile--r--footer:
+  css:
+    component:
+      css/components/region/footer/style.css: { minified: true }
+
+## Block.
+versatile--b--search:
+  css:
+    component:
+      css/components/block/search/style.css: { minified: true }
+  js:
+    templates/components/block/search/script.js: { minified: false }
+  dependencies:
+    - core/drupal
+
+versatile--b--language:
+  css:
+    component:
+      css/components/block/language-block/style.css: { minified: true }
+
+b--homepage-hero:
+  css:
+    component:
+      css/components/block/homepage-hero/style.css: { minified: true }
+
+b--map:
+  css:
+    component:
+      css/components/block/map/style.css: { minified: true }
+
+b--blockui:
+  css:
+    component:
+      css/components/block/blockui/style.css: { minified: true }
+  dependencies:
+    - versatile/dropdown
+
+b--might-be-useful-publications:
+  css:
+    component:
+      css/components/block/might-be-useful-publications/style.css: { minified: true }
+
+b--banner-menu:
+  css:
+    component:
+      css/components/block/banner-menu/style.css: { minified: true }
+  js:
+    templates/components/block/banner-menu/script.js: { minified: false }
+  dependencies:
+    - core/drupal
+
+## Node.
+n--full:
+  css:
+    component:
+      css/components/node/vm--full/style.css: { minified: true }
+
+n--card:
+  css:
+    component:
+      css/components/node/vm--card/style.css: { minified: true }
+
+n--inner-page-header:
+  css:
+    component:
+      css/components/node/vm--inner-page-header/style.css: { minified: true }
+
+n--events--full:
+  css:
+    component:
+      css/components/node/events/vm--full/style.css: { minified: true }
+
+n--events--teaser:
+  css:
+    component:
+      css/components/node/events/vm--teaser/style.css: { minified: true }
+
+n--news--full:
+  css:
+    component:
+      css/components/node/news/vm--full/style.css: { minified: true }
+
+n--news--teaser:
+  css:
+    component:
+      css/components/node/news/vm--teaser/style.css: { minified: true }
+
+n--news--teaser-lg:
+  css:
+    component:
+      css/components/node/news/vm--teaser-lg/style.css: { minified: true }
+
+n--news--news-header:
+  css:
+    component:
+      css/components/node/news/vm--news-header/style.css: { minified: true }
+  js:
+    templates/components/node/news/vm--news-header/script.js: {}
+  dependencies:
+    - core/drupal
+
+n--team-member--teaser:
+  css:
+    component:
+      css/components/node/team-member/vm--teaser/style.css: { minified: true }
+
+n--private-signatories--teaser:
+  css:
+    component:
+      css/components/node/private-signatories/vm--teaser/style.css: { minified: true }
+
+## Taxonomy term.
+t--vm-region-list:
+  css:
+    component:
+      css/components/taxonomy/vm--region-list/style.css: { minified: true }
+
+t--vm-tag:
+  css:
+    component:
+      css/components/taxonomy/vm--tag/style.css: { minified: true }
+  dependencies:
+    - versatile/badge
+
+## Views.
+v:
+  css:
+    component:
+      css/views/views-view.css: { minified: true }
+
+exposed-form:
+  css:
+    component:
+      css/components/view/exposed-form/style.css: { minified: true }
+  js:
+    templates/components/view/exposed-form/script.js: {}
+  dependencies:
+    - core/drupal
+
+v--all-news:
+  css:
+    component:
+      css/components/view/all-news/style.css: { minified: true }
+  js:
+    templates/components/view/all-news/script.js: {}
+  dependencies:
+    - core/drupal
+    - versatile/v
+
+v--all-events:
+  css:
+    component:
+      css/components/view/all-events/style.css: { minified: true }
+  js:
+    templates/components/view/all-events/script.js: {}
+  dependencies:
+    - core/drupal
+    - versatile/v
+
+# Custom components library
+cc--card-pillars:
+  css:
+    component:
+      css/components/custom/card-pillars/style.css: { minified: true }
+
+cc--image-text:
+  css:
+    component:
+      css/components/custom/image-text/style.css: { minified: true }
+
+cc--quote-block:
+  css:
+    component:
+      css/components/custom/quote-block/style.css: { minified: true }
+
+cc--our-latest-news:
+  css:
+    component:
+      css/components/custom/our-latest-news/style.css: { minified: true }
+      css/components/custom/our-latest-news/view.css: { minified: true }
+  js:
+    templates/components/custom/our-latest-news/swiper-init.js: {}
+  dependencies:
+    - versatile/swiper
+
+# Paragraphs.
+p--accordion:
+  css:
+    component:
+      css/components/paragraph/accordions/style.css: { minified: true }
+  dependencies:
+    - versatile/accordion
+
+p--address:
+  css:
+    component:
+      css/components/paragraph/address/style.css: { minified: true }
+
+p--link:
+  css:
+    component:
+      css/components/paragraph/link/style.css: { minified: true }
+
+p--paragraph-cards:
+  css:
+    component:
+      css/components/paragraph/paragraph-cards/style.css: { minified: true }
+
+p--sdgs:
+  css:
+    component:
+      css/components/paragraph/sdgs/style.css: { minified: true }
+
+p--logo-gallery:
+  css:
+    component:
+      css/components/paragraph/logo-gallery/style.css: { minified: true }
+
+p--card-paragraph:
+  css:
+    component:
+      css/components/paragraph/card-paragraph/style.css: { minified: true }
+
+p--timeline:
+  css:
+    component:
+      css/components/paragraph/timeline/style.css: { minified: true }
+  js:
+    templates/components/paragraph/timeline/script.js: {}
+  dependencies:
+    - core/drupal
+
+p--ctas:
+  css:
+    component:
+      css/components/paragraph/ctas/style.css: { minified: true }
+
+p--p-collapsible:
+  css:
+    component:
+      css/components/paragraph/p-collapsible/style.css: { minified: true }
+  dependencies:
+    - versatile/collapse
+
+p--image-text-cta:
+  css:
+    component:
+      css/components/paragraph/image-text-cta/style.css: { minified: true }
+
+p--publication-useful-item:
+  css:
+    component:
+      css/components/paragraph/publication-useful-item/style.css: { minified: true }
+
+p--tabs:
+  css:
+    component:
+      css/components/paragraph/tabs/style.css: { minified: true }
+  js:
+    templates/components/paragraph/tabs/script.js: {}
+  dependencies:
+    - versatile/tab
+    - core/drupal
+
+p--team-member:
+  css:
+    component:
+      css/components/paragraph/team-member/style.css: { minified: true }
+
+p--paragraph-cards--card-header-inner-page:
+  css:
+    component:
+      css/components/paragraph/paragraph-cards/vm--card-header-inner-page/style.css: { minified: true }
+
+p--image-gallery:
+  css:
+    component:
+      css/components/paragraph/image-gallery/style.css: { minified: true }
+  js:
+    templates/components/paragraph/image-gallery/script.js: {}
+  dependencies:
+    - versatile/swiper
+
+p--video-gallery:
+  css:
+    component:
+      css/components/paragraph/video-gallery/style.css: { minified: true }
+  js:
+    templates/components/paragraph/video-gallery/script.js: {}
+  dependencies:
+    - versatile/swiper
+
+p--text-paragraph:
+  dependencies:
+    - versatile/bootstrap4
+    - versatile/alert
+    - versatile/accordion
+    - versatile/table
+
+# Pages.
+pg--view:
+  css:
+    component:
+      css/components/pages/view/style.css: { minified: true }
+  dependencies:
+    - versatile/n--inner-page-header
+
+# Menu.
+m--main-menu:
+  css:
+    component:
+      css/components/nav/main-menu/style.css: { minified: true }
+  dependencies:
+    - versatile/nav
+    - versatile/collapse
+
+# Web Forms
+webform:
+  css:
+    component:
+      css/components/webform/style.css: { minified: true }
+  dependencies:
+    - versatile/forms

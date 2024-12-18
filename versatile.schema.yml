@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Versatile Theme theme.
+
+versatile.settings:
+  type: theme_settings
+  label: 'Versatile Theme settings'

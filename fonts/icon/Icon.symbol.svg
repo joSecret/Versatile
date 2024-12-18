@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="display:none;"><symbol viewBox="0 0 20 20" id="icon-arrow-down">
+  <rect width="20" height="20" fill="none"></rect>
+  <path d="M1.612,4.612a.385.385,0,0,1,.545,0L6.5,8.955l4.343-4.343a.385.385,0,0,1,.545.545L6.771,9.771a.385.385,0,0,1-.545,0L1.612,5.157a.385.385,0,0,1,0-.545" transform="translate(3.501 2.501)" fill-rule="evenodd"></path>
+</symbol><symbol viewBox="0 0 20 20" id="icon-arrow">
+  <rect width="20" height="20" fill="none"></rect>
+  <path d="M1,8a.5.5,0,0,1,.5-.5H13.293L10.146,4.354a.5.5,0,1,1,.708-.708l4,4a.5.5,0,0,1,0,.708l-4,4a.5.5,0,1,1-.708-.708L13.293,8.5H1.5A.5.5,0,0,1,1,8" transform="translate(2 1.501)" fill="currentColor" fill-rule="evenodd"></path>
+</symbol><symbol id="icon-download"></symbol><symbol viewBox="0 0 16 16" id="icon-minus">
+  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"></path>
+</symbol><symbol viewBox="0 0 16 16" id="icon-plus">
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
+</symbol></svg>

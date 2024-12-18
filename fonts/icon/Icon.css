@@ -1,0 +1,15 @@
+@font-face {font-family: "Icon";
+  src: url('Icon.eot?t=1730725244573');
+  src: url('Icon.eot?t=1730725244573#iefix') format('embedded-opentype'),
+  url("Icon.woff2?t=1730725244573") format("woff2"),
+  url("Icon.woff?t=1730725244573") format("woff"),
+  url('Icon.ttf?t=1730725244573') format('truetype'),
+  url('Icon.svg?t=1730725244573#Icon') format('svg');
+}
+
+.icon-arrow-down:before { content: "\ea01"; }
+.icon-arrow:before { content: "\ea02"; }
+.icon-download:before { content: "\ea03"; }
+.icon-minus:before { content: "\ea04"; }
+.icon-plus:before { content: "\ea05"; }
+
