@@ -10,6 +10,10 @@
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
+
+  @supports (interpolate-size: allow-keywords) {
+    interpolate-size: allow-keywords;
+  }
 }
 
 body {
@@ -20,8 +24,6 @@ body {
   line-height: var(--body-lh, var(--lh));
   color: var(--body-c);
   background-color: var(--body-bg);
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: inherit;
 }
 
 hr {
@@ -126,7 +128,7 @@ sup {
   }
 
   &.active {
-    --_link_c: var(--link_c_a, var(--link_c_h-default));
+    --_link_c: var(--link_c_a, var(--link_c_a-default));
   }
 }
 

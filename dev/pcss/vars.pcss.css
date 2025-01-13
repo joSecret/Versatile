@@ -31,7 +31,8 @@
 
   /* Link */
   --link_c-default: var(--c-primary);
-  --link_c_h-default: hsl(from var(--c-primary) h s calc(l - 10));
+  --link_c_h-default: hsl(from var(--link_c-default) h s calc(l - 10));
+  --link_c_a-default: hsl(from var(--link_c-default) h s calc(l - 20));
   --link_d-default: none;
   --link_d_h-default: underline;
 
