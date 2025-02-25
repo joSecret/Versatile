@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Versatile theme implementation to display a paragraph.
+ *
+ * @see paragraph.html.twig
+ */
+#}
+
+{% extends "paragraph.html.twig" %}
+
+{% set gridValue = content.field_grid.0['#markup'] == 1 %}
+
+{% block content %}
+  {% include 'versatile:heading' with {
+    'heading_html_tag': 'h4',
+    'content': content.field_heading.0,
+  } %}
+
+  {% if content.field_description.0 %}
+    <div class="mb-1">
+      {{ content.field_description }}
+    </div>
+  {% endif %}
+
+  {% include 'versatile:code_tabs' with {
+    grid: gridValue,
+    code: content.field_code,
+    language: content.field_code_language.0['#markup'],
+  } %}
+{% endblock %}

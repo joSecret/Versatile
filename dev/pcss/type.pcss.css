@@ -41,11 +41,11 @@
 }
 
 .lead {
-  --fs-lead: calc(var(--fs-base) * 0.125);
-  --lead-font-weight: 300;
+  --lead_fs: calc(var(--fs-base) * 1.125);
+  --lead_fw: 300;
 
-  font-size: var(--fs-lead);
-  font-weight: var(--lead-font-weight);
+  font-size: var(--lead_fs);
+  font-weight: var(--lead_fw);
 }
 
 /* Lists */
@@ -65,6 +65,7 @@
 
   &:not(:last-child) {
     --list-inline-p: 0.5rem;
+
     margin-right: var(--list-inline-p);
   }
 }

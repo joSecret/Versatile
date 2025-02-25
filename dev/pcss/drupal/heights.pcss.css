@@ -7,3 +7,9 @@
   min-height: calc(100vh - var(--drupal-displace-offset-top, 0px));
   min-height: calc(100dvh - var(--drupal-displace-offset-top, 0px));
 }
+
+/* temp */
+.field--name-field-example-snippets {
+  display: grid;
+  gap: 48px;
+}

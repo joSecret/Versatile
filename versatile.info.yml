@@ -23,6 +23,11 @@ libraries-override:
       theme:
         styles/stockholmsyndrome/colorbox_style.css: css/versatile/colorbox-stockholmsyndrome.css
 
+  prism/prism:
+    css:
+      component:
+        /libraries/prism/prism.css: css/modules/prism.css
+
 stylesheets-remove:
   - "@classy/css/components/tabs.css"
 
