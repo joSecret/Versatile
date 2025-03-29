@@ -1,116 +1,121 @@
 /*
  * Base styles
 */
+@layer accordion {
+  .accordion {
+    --accordion-c: var(--c-primary-dark);
+    --accordion-bg: var(--body-bg);
+    --accordion-transition: color 0.15s ease-in-out,
+      background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
 
-.accordion {
-  --accordion-c: var(--c-primary-dark);
-  --accordion-bg: var(--body-bg);
-  --accordion-transition: color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+    --accordion-btn-c_h: var(--c-primary);
+    --accordion-c_a: color-mix(
+      in oklab,
+      var(--accordion-c),
+      var(--c-black) 10%
+    );
 
-  --accordion-btn-c_h: var(--c-primary);
-  --accordion-c_a: color-mix(in oklab, var(--accordion-c), var(--c-black) 10%);
+    --accordion-btn-fs: 20px;
+    --accordion-btn-px: 0px;
+    --accordion-btn-py: 20px;
+    --accordion-btn-c: var(--accordion-c);
 
-  --accordion-btn-fs: 20px;
-  --accordion-btn-px: 0px;
-  --accordion-btn-py: 20px;
-  --accordion-btn-c: var(--accordion-c);
+    --accordion-btn-icon: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 18L10 2' stroke='%23001968' stroke-width='1.25'/%3E%3Cpath d='M2 10H18' stroke='%23001968' stroke-width='1.25'/%3E%3C/svg%3E%0A");
+    --_accordion-btn-icon_h: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 18L10 2' stroke='%230022f5' stroke-width='1.25'/%3E%3Cpath d='M2 10H18' stroke='%230022f5' stroke-width='1.25'/%3E%3C/svg%3E%0A");
+    --_accordion-btn-icon_a: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 10H18' stroke='%23001968' stroke-width='1.25'/%3E%3C/svg%3E%0A");
+    --_accordion-btn-icon_a_h: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 10H18' stroke='%230022f5' stroke-width='1.25'/%3E%3C/svg%3E%0A");
+    --accordion-btn-icon-w: 20px;
+    --accordion-btn-icon-transform: rotate(180deg);
+    --accordion-btn-icon-transition: transform 0.2s ease-in-out;
 
-  --accordion-btn-icon: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 18L10 2' stroke='%23001968' stroke-width='1.25'/%3E%3Cpath d='M2 10H18' stroke='%23001968' stroke-width='1.25'/%3E%3C/svg%3E%0A");
-  --_accordion-btn-icon_h: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 18L10 2' stroke='%230022f5' stroke-width='1.25'/%3E%3Cpath d='M2 10H18' stroke='%230022f5' stroke-width='1.25'/%3E%3C/svg%3E%0A");
-  --_accordion-btn-icon_a: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 10H18' stroke='%23001968' stroke-width='1.25'/%3E%3C/svg%3E%0A");
-  --_accordion-btn-icon_a_h: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 10H18' stroke='%230022f5' stroke-width='1.25'/%3E%3C/svg%3E%0A");
-  --accordion-btn-icon-w: 20px;
-  --accordion-btn-icon-transform: rotate(180deg);
-  --accordion-btn-icon-transition: transform 0.2s ease-in-out;
-
-  --accordion-body-px: 0;
-  --accordion-body-py: 20px;
-}
-
-.accordion-item {
-  color: var(--accordion-c);
-  background-color: var(--accordion-bg);
-  border: rgba(0, 0, 0, 0.1) solid;
-  border-width: 1px 0;
-
-  &:not(:last-child) {
-    margin-bottom: -1px;
+    --accordion-body-px: 0;
+    --accordion-body-py: 20px;
   }
-}
 
-.accordion-btn {
-  --_btn-c: var(--accordion-btn-c);
-  --btn-c_h: var(--accordion-btn-c_h);
-  --_btn-fs: var(--accordion-btn-fs);
-  --btn-ff: var(--ff);
-  --btn-br: 0;
-  --_btn-py: var(--accordion-btn-py);
-  --_btn-px: var(--accordion-btn-px);
-  --_btn-bw: 0;
+  .accordion-item {
+    color: var(--accordion-c);
+    background-color: var(--accordion-bg);
+    border: rgba(0, 0, 0, 0.1) solid;
+    border-width: 1px 0;
 
-  text-align: initial;
-  font-weight: var(--fw-base);
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: space-between;
-  width: 100%;
-  overflow-anchor: none;
-  transition: var(--accordion-transition);
-  line-height: 1.4;
+    &:not(:last-child) {
+      margin-bottom: -1px;
+    }
+  }
 
-  &:not(.collapsed) {
+  .accordion-btn {
+    --_btn-c: var(--accordion-btn-c);
+    --btn-c_h: var(--accordion-btn-c_h);
+    --_btn-fs: var(--accordion-btn-fs);
+    --btn-ff: var(--ff);
+    --btn-br: 0;
+    --_btn-py: var(--accordion-btn-py);
+    --_btn-px: var(--accordion-btn-px);
+    --_btn-bw: 0;
+
+    text-align: initial;
+    font-weight: var(--fw-base);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    overflow-anchor: none;
+    transition: var(--accordion-transition);
+    line-height: 1.4;
+
+    &:not(.collapsed) {
+      &::after {
+        background-image: var(--_accordion-btn-icon_a);
+        transform: var(--accordion-btn-icon-transform);
+      }
+
+      &:hover {
+        &::after {
+          background-image: var(--_accordion-btn-icon_a_h);
+        }
+      }
+    }
+
     &::after {
-      background-image: var(--_accordion-btn-icon_a);
-      transform: var(--accordion-btn-icon-transform);
+      content: '';
+      flex-shrink: 0;
+      width: var(--accordion-btn-icon-w);
+      height: var(--accordion-btn-icon-w);
+      transition: var(--accordion-btn-icon-transition);
+      background-image: var(--accordion-btn-icon);
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     &:hover {
-      &::after {
-        background-image: var(--_accordion-btn-icon_a_h);
+      z-index: 2;
+
+      &:after {
+        background-image: var(--_accordion-btn-icon_h);
       }
     }
-  }
 
-  &::after {
-    content: "";
-    flex-shrink: 0;
-    width: var(--accordion-btn-icon-w);
-    height: var(--accordion-btn-icon-w);
-    transition: var(--accordion-btn-icon-transition);
-    background-image: var(--accordion-btn-icon);
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &:hover {
-    z-index: 2;
-
-    &:after {
-      background-image: var(--_accordion-btn-icon_h);
+    &:focus {
+      z-index: 3;
+      outline: 0;
     }
   }
 
-  &:focus {
-    z-index: 3;
-    outline: 0;
+  .accordion-body {
+    padding: var(--accordion-body-py) var(--accordion-body-px);
+    padding-block-start: 0;
   }
-}
 
-.accordion-body {
-  padding: var(--accordion-body-py) var(--accordion-body-px);
-  padding-block-start: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .accordion-button {
-    transition: none;
-
-    &::after {
+  @media (prefers-reduced-motion: reduce) {
+    .accordion-button {
       transition: none;
+
+      &::after {
+        transition: none;
+      }
     }
   }
 }
