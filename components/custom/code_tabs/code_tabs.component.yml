@@ -1,0 +1,66 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Code tabs
+status: stable
+props:
+  type: object
+  properties:
+    # properties
+    grid:
+      type: boolean
+      title: Brid
+      default: false;
+
+    code:
+      type: string
+      title: Code
+      default: ''
+
+    language:
+      type: string
+      title: Language
+      enum:
+        - 'html'
+        - 'twig'
+        - 'php'
+        - 'css'
+        - 'scss'
+        - 'js'
+        - 'pcss'
+      default: 'right'
+
+    hide_tab:
+      type: string
+      title: Hide tab
+      example:
+        - 'preview'
+        - 'code'
+
+    # values
+    # uc -> utility_classes
+    code_tabs_uc:
+      type: array
+      items:
+        type: string
+      title: Tabs Utility Classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+      default: []
+
+    # att -> attributes
+    code_tabs_att:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: A list of HTML attributes for the Tabs.
+
+slots:
+  content:
+    title: Content
+
+  s_preview:
+    title: Preview
+
+  s_code:
+    title: Code
+
+libraryOverrides:
+  dependencies:
+    - prism/drupal.prism

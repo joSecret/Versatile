@@ -1,0 +1,64 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Card code
+status: experimental
+description: 'A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options. If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.'
+group: Cards
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: Card Title
+
+    description:
+      type: string
+      title: Card description
+
+    code:
+      type: string
+      title: Card Header
+
+    card_uc:
+      type: array
+      items:
+        type: string
+      title: Utility Classes
+      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card component.
+      default: []
+
+    title_uc:
+      type: array
+      items:
+        type: string
+      title: Title Utility Classes
+      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card title component.
+      default: []
+
+    description_uc:
+      type: array
+      items:
+        type: string
+      title: Subtitle Utility Classes
+      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card subtitle component.
+      default: []
+
+    code_uc:
+      type: array
+      items:
+        type: string
+      title: Body Utility Classes
+      description: An array of utility classes. These can be used to add extra Bootstrap utility classes or custom CSS classes to the card body component.
+      default: []
+
+slots:
+  slot_title:
+    title: Card Title
+    description: Slot for the title of the card.
+
+  slot_description:
+    title: Card Description
+    description: Slot for the description of the card.
+
+  slot_code:
+    title: Card code slot
+    description: Slot for the code of the card.

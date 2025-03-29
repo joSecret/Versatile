@@ -1,0 +1,94 @@
+{#
+/**
+ * @file
+ * Template for a button component.
+ *
+ * Available properties:
+ * - button_tag: (string) default: (button | a | span).
+ *   Defaults if exist url (a) else (button).
+ * - url: (string) default: (null)
+ * - id: (string) default: (null)
+ * - content: (string) default: ('')
+ * - color: (string)
+ *   enum: (primary | secondary | success | danger | warning | info | dark | light | link)
+ *   default: null
+ * - outline: (boolean) default: (null)
+ * - size: (string) enum: (sm | lg) default: (null)
+ * - disabled: (boolean) default: (null)
+ *
+ * Availabel Utility classes -> uc
+ * - button_uc: An array of utility classes.
+ *
+ * Availabel attributes -> att
+ * - button_att: Attributes array.
+ *
+ * Availabel slots
+ * - slot_icon_before: Icon before content
+ * - slot_content: The content for the button
+ * - slot_icon: Icon after content
+ *
+ * * usage example: @see README.md
+ */
+#}
+
+{# Set default value #}
+{% if url %}
+  {% set button_tag = button_tag|default('a') %}
+{% else %}
+  {% set button_tag = button_tag|default('button') %}
+{% endif %}
+{% set id = id|default('') %}
+{% set icon_position_d = icon_position|default('right') %}
+
+{# Create attributres #}
+{% set button_att = button_att ?: create_attribute() %}
+
+{# Component classes #}
+{%
+  set button_classes = [
+    outline ? 'btn-outline' : 'btn',
+    icon ? 'btn-i',
+    icon_position ? 'btn-i--' ~ icon_position_d,
+    size ? 'btn-' ~ size,
+    color ? 'btn-' ~ color,
+    disabled ? 'disabled',
+    icon_position == 'only' ? rounded ? 'btn-rounded',
+  ]|merge(button_uc ?: [])
+%}
+
+{# Change attributres #}
+{% if button_tag == 'a' %}
+  {% set button_att = button_att.setAttribute('href', url ?? '') %}
+{% endif %}
+
+{% if disabled == true %}
+  {% set button_att = button_att.setAttribute('aria-disabled', 'true' ) %}
+  {% set button_att = button_att.setAttribute('tabindex', '-1' ) %}
+{% endif %}
+
+{% set button_att = button_att.setAttribute('aria-expanded', expanded) %}
+
+{% if id %}
+  {% set button_att = button_att.setAttribute('id', id) %}
+{% endif %}
+
+{# Render component #}
+<{{button_tag}} {{ button_att.addClass(button_classes) }}>
+  {%- if icon_position_d == 'left' -%}
+    {%- block slot_icon_before -%}
+      {{- icon|raw -}}
+    {%- endblock -%}
+  {%- endif -%}
+
+  {%- if icon_position_d != 'only' -%}
+    {%- block slot_content -%}
+      {{- content -}}
+    {%- endblock -%}
+  {%- endif -%}
+
+  {%- if icon_position_d != 'left' -%}
+    {%- block slot_icon -%}
+      {{- icon|raw -}}
+    {%- endblock -%}
+  {%- endif -%}
+</{{button_tag}}>

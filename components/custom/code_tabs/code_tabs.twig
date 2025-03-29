@@ -1,0 +1,117 @@
+{#
+/**
+  * @file
+  * Accordion component.
+  *
+  * Available properties:
+  * - code (string) (default: rigth)
+  * - language (string) (html|twig|php|css|scss|js|pcss) (default: html)
+  *
+  * Availabel Utility classes -> uc
+  * - code_tabs_uc (array) (default: '')
+  *
+  * Availabel attributes -> att
+  * - code_tabs_att (Drupal\Core\Template\Attribute)
+  *
+  * Availabel slots
+  * - content
+  * - preview
+  * - code
+  *
+  * usage example: @see code_tabs.md
+  *
+  */
+#}
+
+{# Set default value #}
+{% set grid = grid|default(false) %}
+{% set hide_tab = hide_tab|default('') %}
+{% set code = code|default('') %}
+{% set language = language|default('html') %}
+{% set code_tabs_id = 'ct--' ~ random(1000) %}
+
+{# Create attributres #}
+{% set code_tabs_att = code_tabs_att ?: create_attribute() %}
+
+{# Component classes #}
+{%
+  set code_tabs_classes = [
+    'tabs',
+  ]|merge(code_tabs_uc ?: [])
+%}
+
+{# Change attributres #}
+
+{# Render component #}
+
+<div {{ attributes.addClass(code_tabs_classes).setAttribute('id', code_tabs_id) }}>
+  {% block content %}
+    <ul aria-labelledby="tabs-title">
+      {% if hide_tab != 'preview' %}
+        <li role="presentation">
+          <a id="tab-1" href="#preview">
+            {{ 'Preview'|t }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% if hide_tab != 'html' and language == 'twig'%}
+        <li role="html-presentation">
+          <a id="tab-2" href="#html">
+            {{ 'HTML'|t }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% if hide_tab != 'code' %}
+        <li role="code-presentation">
+          <a id="tab-3" href="#code">
+            {{ language|capitalize }}
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+
+    <div class="tabs--panel">
+      {% block s_preview %}
+        {% if hide_tab != 'preview' %}
+          <div id="preview" aria-labelledby="tab-1" {{ grid ? 'class="in-grid"'}}>
+            <div class="w">
+            {%- if language == 'twig' -%}
+              {{- code -}}
+            {%- else -%}
+              {{- code.0['#template']|raw -}}
+            {%- endif -%}
+            </div>
+          </div>
+        {% endif %}
+      {% endblock %}
+
+      {%- block s_html -%}
+        {%- if hide_tab != 'html' and language == 'twig' -%}
+          <div id="html" aria-labelledby="tab-2">
+            <div class="prism-wrapper" rel="html">
+              <pre>
+                <code class="language-html">{{- code|render|escape -}}</code>
+              </pre>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endblock -%}
+
+      {% block s_code %}
+        {% if hide_tab != 'code' %}
+          <div id="code" aria-labelledby="tab-3">
+            <div class="prism-wrapper" rel={{ language }}>
+              <pre>
+                <code class="language-{{ language }}">
+                  {{- code.0['#template'] -}}
+                </code>
+              </pre>
+            </div>
+          </div>
+        {% endif %}
+      {% endblock %}
+    </div>
+  {% endblock %}
+</div>

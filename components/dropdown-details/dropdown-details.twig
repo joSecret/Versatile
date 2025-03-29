@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Template for a Drodown component.
+ *
+ * Available config:
+ */
+#}
+
+{% set macrosArray = {
+  button_label: button_label,
+  button_color: button_color,
+  default_state: default_state,
+  content_position: content_position,
+} %}
+
+{% import _self as component %}
+{{ component.dropdown(menu_items, 0, macrosArray) }}
+
+{% macro dropdown(menu_items, level, m) %}
+  <details class="dropdown {{ m.content_position ? 'dropdown-' ~ m.content_position }}" {{ m.default_state ? 'open' }}>
+    {% block slot_button %}
+      {% include 'versatile:button' with {
+        button_tag: 'summary',
+        color: m.button_color,
+        content: m.button_label,
+      } %}
+    {% endblock %}
+
+    <ul class="dropdown--content is-menu dd--level-{{level}}">
+      {% block slot_content %}
+        {% if content %}
+          {{ content }}
+        {% else %}
+          {% for item in menu_items %}
+            {% set itemUrl = item.url|render %}
+
+            <li>
+              {% if item.below %}
+                {% set m = m|merge(
+                  { button_label: item.title },
+                  { default_state: item.in_active_trail },
+                ) %}
+
+                {{ component.dropdown(item.below, level + 1, m) }}
+              {% else %}
+                {% include 'versatile:button' with {
+                  content: item.title,
+                  url: itemUrl is empty ? null : itemUrl,
+                  button_uc: [item.in_active_trail ? 'is-active'],
+                } %}
+              {% endif %}
+            </li>
+          {% endfor %}
+        {% endif %}
+      {% endblock %}
+    </ul>
+  </details>
+{% endmacro %}

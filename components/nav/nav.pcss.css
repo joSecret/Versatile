@@ -1,0 +1,154 @@
+@layer component {
+  :where(.nav) {
+    --_nav_mb: var(--nav-mb, 0px);
+    --_nav_d: var(--_nav_d, row);
+
+    --link_c: var(--nav-link_c, var(--_nav-link_c));
+    --link_c_h: var(
+      --nav-link_c_h,
+      hsl(from var(--_nav-link_c) h s calc(l - 10))
+    );
+    --link_c_a: var(--nav-link_c_a, var(--link_c_h));
+    --link_d_h: var(--nav-link_d_h, none);
+
+    --_nav-link_c: var(--nav-link_c, var(--def--link_c));
+    --_nav-link_pi: var(--nav-link_pi, var(--nav-link_pi-default));
+    --_nav-link_pb: var(--nav-link_pb, var(--nav-link_pb-default));
+    --_nav-link-fw: var(--nav-link-fw, var(--nav-link-fw-default));
+
+    --ul-mb: var(--_nav_mb);
+    --ul-ps: 0px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: var(--_nav_d);
+    list-style: none;
+
+    &.nav-vertical {
+      --_nav_d: column;
+      --dropdown_w: 100%;
+      --dropdown-content_pos: relative;
+    }
+
+    &.nav-tabs {
+      --nav-link_c: var(
+        --nav-tabs-link_c,
+        hsl(from var(--_nav-link_c) h s calc(l + 15))
+      );
+
+      --_nav-tabs_bw: var(--nav-tabs_bw, var(--bw));
+      --_nav-tabs-bc: var(--nav-tabs-bc, var(--bc));
+      --_nav-tabs_br: var(--nav-tabs_br, var(--br));
+      --_nav-tabs_bc_h: var(
+        --nav-tabs_bc_h,
+        hsl(from var(--_nav-tabs-bc) h s calc(l + 15))
+      );
+      --_nav-tabs-link_bc_a: var(--nav-tabs-link_bc_a, var(--_nav-tabs-bc));
+      --_nav-tabs-link_bg_a: var(--nav-tabs-link_bg_a, var(--body-bg));
+
+      border-block-end: var(--_nav-tabs_bw) solid var(--_nav-tabs-bc);
+
+      a {
+        margin-bottom: calc(var(--_nav-tabs_bw) * -1);
+        border: var(--_nav-tabs_bw) solid transparent;
+        border-block-end: transparent;
+        border-top-left-radius: var(--_nav-tabs_br);
+        border-top-right-radius: var(--_nav-tabs_br);
+
+        &:hover,
+        &:focus {
+          border-color: var(--_nav-tabs_bc_h);
+          isolation: isolate;
+        }
+
+        &.active {
+          background-color: var(--_nav-tabs-link_bg_a);
+          border-color: var(--_nav-tabs-link_bc_a);
+        }
+      }
+
+      .dropdown-menu {
+        margin-top: calc(-1 * var(--_nav-tabs_bw));
+      }
+    }
+  }
+
+  /* Pills */
+  .nav-pills {
+    --nav-pills_br: 10px;
+    --nav-pills-link-active-color: #456456;
+    --nav-pills-link-active-bg: #654654;
+
+    .nav-item {
+      border-radius: var(--nav-pills_br);
+      background-color: var(--nav-pills-link-active-bg);
+    }
+
+    .nav-link.active,
+    .show > .nav-link {
+      color: var(--nav-pills-link-active-color);
+    }
+  }
+
+  /* Underline */
+  .nav-underline {
+    --nav-underline-gap: 10px;
+    --nav-underline-border-width: 3px;
+    --nav-underline-link-active-color: #589652;
+
+    gap: var(--nav-underline-gap);
+
+    .nav-link {
+      padding-right: 0;
+      padding-left: 0;
+      border-bottom: var(--nav-underline-border-width) solid transparent;
+
+      &:hover,
+      &:focus {
+        border-bottom-color: currentcolor;
+      }
+    }
+
+    .nav-link.active,
+    .show > .nav-link {
+      font-weight: var(--fw-bold);
+      color: var(--nav-underline-link-active-color);
+      border-bottom-color: currentcolor;
+    }
+  }
+
+  /* Justified variants */
+  .nav-fill {
+    > .nav-link,
+    .nav-item {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+  }
+
+  .nav-justified {
+    > .nav-link,
+    .nav-item {
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+
+  .nav-fill,
+  .nav-justified {
+    .nav-item .nav-link {
+      width: 100%; /* Make sure button will grow */
+    }
+  }
+
+  /* Tabbable tabs */
+  .tab-content {
+    > .tab-pane {
+      display: none;
+    }
+    > .active {
+      display: block;
+    }
+  }
+}

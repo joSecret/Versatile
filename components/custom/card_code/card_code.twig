@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Template for a Card component.
+ *
+ * Available config:
+  * - title: (string) (optional).
+  * - description: (string) (optional).
+  * - code: (string) (optional) Card title.
+  * - card_uc: (optional) Any additional classes to add to the card.
+  * - title_uc: (optional) Any additional classe to add to the title of card.
+  * - description_uc: (optional) Any additional classe to add to the description of card.
+  * - code_uc: (optional) Any additional classe to add to the code of card.
+ */
+#}
+
+{% set card_att = create_attribute() %}
+
+{% set card_classes = [
+    'card',
+    'card-code',
+]|merge(card_uc ?: []) %}
+
+{% set title_classes = [
+  'card-title'
+]|merge(title_uc ?: []) %}
+
+{% set description_classes = [
+    'card-description'
+]|merge(description_uc ?: []) %}
+
+{% set code_classes = [
+  'card-code'
+]|merge(code_uc ?: []) %}
+
+{% set card_title_tag = card_title_tag|default('h3') %}
+
+{% apply spaceless %}
+<div{{ card_att.addClass(card_classes) }}>
+  {% block slot_title %}
+    {% include 'versatile:heading' with {
+      'heading_html_tag': 'h4',
+      'content': title,
+    } %}
+  {% endblock %}
+
+  {% block slot_description %}
+    {{ description }}
+  {% endblock %}
+
+  {% block slot_code %}
+    {{ code }}
+  {% endblock %}
+</div>
+{% endapply %}

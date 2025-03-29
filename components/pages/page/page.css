@@ -1,0 +1,1 @@
+.page{display:flex;flex-direction:column;min-height:100dvh;min-height:calc(100vh - var(--drupal-displace-offset-top, 0px));min-height:calc(100dvh - var(--drupal-displace-offset-top, 0px))}.page>main{flex-grow:1}

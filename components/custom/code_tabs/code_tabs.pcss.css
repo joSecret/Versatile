@@ -1,0 +1,65 @@
+.tabs {
+  --_tabs_d: var(--tabs_d, grid);
+  --_tabs_gap: var(--tabs_gap, 18px);
+  --_tabs_p: var(--tabs_p, 1.5rem);
+  --_tabs_br: var(--tabs_br, 0.5rem);
+  --_tabs_bg: var(--tabs_bg, var(--body-bg));
+  --_tabs_shadow: var(--tabs_shadow, var(--sadow));
+
+  --_tabs-ul_d: var(--tabs-ul_dg, inline-flex);
+  --_tabs-ul_br: var(--tabs-ul_br, 10px);
+  --_tabs-ul_p: var(--tabs-ul_p, 6px);
+  --_tabs-ul_gap: var(--tabs-ul_gap, 6px);
+  --_tabs-ul_bg: var(--tabs-ul_bg, var(--c-gray-200));
+
+  display: var(--_tabs_d);
+  gap: var(--_tabs_gap);
+  padding: var(--_tabs_p);
+  border-radius: var(--_tabs_br);
+  background: var(--_tabs_bg);
+  box-shadow: var(--_tabs_shadow);
+
+  & > ul {
+    --ul-mbe: 0px;
+    --ul-ps: var(--_tabs-ul_p);
+
+    width: 100%;
+    list-style: none;
+    padding: var(--_tabs-ul_p);
+    display: var(--_tabs-ul_d);
+    gap: var(--_tabs-ul_gap);
+    background-color: var(--_tabs-ul_bg);
+    border-radius: var(--_tabs-ul_br);
+
+    a {
+      display: inline-block;
+      padding: 8px 20px;
+      color: var(--body-c);
+      border-radius: 8px;
+      text-decoration: none;
+
+      &:hover:not([aria-selected='true']) {
+        background: var(--c-gray-300);
+      }
+    }
+  }
+
+  [aria-selected='true'] {
+    background: white;
+  }
+
+  .prism-wrapper {
+    padding: 0;
+
+    &:before {
+      content: attr(rel);
+      text-align: center;
+      position: absolute;
+      inset-block-start: 4px;
+      inset-inline: auto 4px;
+      background: none repeat scroll 0 0 #333333;
+      padding: 5px 10px;
+      color: #fff;
+    }
+  }
+}

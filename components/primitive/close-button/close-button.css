@@ -1,0 +1,48 @@
+.btn-close {
+  --btn-c--s: 14px;
+  --btn-c--p: 5px;
+  --btn-c--c: var(--body-c);
+  --btn-c--bg: var(--body-c);
+  --btn-c--bg--s: 14px;
+  --btn-c--opacity: 1;
+  --btn-c--br: var(--border-radius);
+  --btn-c--img: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707'/%3E%3C/svg%3E");
+  background-color: var(--btn-c--bg);
+  border: 0;
+  border-radius: var(--btn-c--br);
+  box-sizing: content-box;
+  color: var(--btn-c--c);
+  height: var(--btn-c--s);
+  -webkit-mask-image: var(--btn-c--img);
+  mask-image: var(--btn-c--img);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: var(--btn-c--bg--s);
+  mask-size: var(--btn-c--bg--s);
+  opacity: var(--btn-c--opacity);
+  padding: var(--btn-c--p);
+  width: var(--btn-c--s);
+}
+.btn-close:hover {
+  color: #000;
+  opacity: 0.75;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.btn-close:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  opacity: 1;
+  outline: 0;
+}
+.btn-close.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}

@@ -1,0 +1,50 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Page layout docs
+version: 1.0.0
+group: Layout
+status: experimental
+description: 'A responsive documentation page layout with sidebar navigation and content area.'
+
+# Props.
+props:
+  type: object
+  properties:
+    style:
+      type: string
+      title: Pabe style
+      description: Page style | bordered.
+      default: ''
+      enum:
+        - ''
+        - bordered
+        - cell
+
+    # uc -> utility_classes
+    page_uc:
+      type: array
+      items:
+        type: string
+      description: 'Additional utility classes added to the page layout docs component.'
+
+    # att -> attributes
+    page_att:
+      type: Drupal\Core\Template\Attribute
+      description: 'HTML attributes for the page layout docs component.'
+
+# Slots.
+slots:
+  slot_branding:
+    title: Page Branding
+    description: 'The branding section/region of the page.'
+
+  page_header:
+    title: Page Header
+    description: 'The header section of the page.'
+
+  page_sidebar:
+    title: Page Footer
+    description: 'The footer section of the page, contains information that appears on the bottom of each page.'
+
+  page_content:
+    title: Page Content
+    description: 'The main content area of the page.'

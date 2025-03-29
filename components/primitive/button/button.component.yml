@@ -1,0 +1,129 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Button
+status: experimental
+description: Use Versatile custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+props:
+  type: object
+  properties:
+    # properties
+    color:
+      type: ['string', 'null']
+      title: Color
+      description: Versatile includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.
+      default: null
+      enum:
+        - primary
+        - secondary
+        - success
+        - danger
+        - warning
+        - info
+        - dark
+        - light
+        - link
+
+    outline:
+      type: boolean
+      title: Outline
+      description: In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the .btn-outline-* ones to remove all background images and colors on any button.
+      default: false
+
+    size:
+      type: ['string', 'null']
+      title: Size
+      description: Versatile button size
+      default: null
+      enum:
+        - null
+        - sm
+        - lg
+
+    icon_position:
+      type: string
+      title: Icon position
+      description: Icon position right | left | only
+      default: 'right'
+      enum:
+        - right
+        - left
+        - only
+
+    expanded:
+      type: string
+      title: Expanded
+      description: Button aria-expanded
+      default: 'false'
+      enum:
+        - 'false'
+        - 'true'
+
+    disabled:
+      type: boolean
+      title: Disabled
+      description: Disabled button
+      default: false
+
+    rounded:
+      type: boolean
+      title: style
+      description: "Button is rounded only for button with icon position value 'only'"
+      default: false
+
+    # values
+    content:
+      type: string
+      title: Button label.
+      default: ''
+
+    button_tag:
+      type: string
+      title: The HTML tag to use for the button (button|a|span). Defaults to `button`.
+      default: button
+      enum:
+        - a
+        - button
+        - span
+        - summary
+
+    url:
+      type: ['string', 'null']
+      title: URL Link
+      description: URL link for the button when the HTML tag is an anchor link.
+
+    icon:
+      type: string
+      title: Icon
+      description: SVG icon code.
+
+    id:
+      type: string
+      title: ID
+      description: The ID of the button.
+
+    # uc -> utility_classes
+    button_uc:
+      type: array
+      items:
+        type: string
+      title: Button Utility Classes
+      default: []
+      description: An array of utility classes. Use to add extra Versatile utility classes or custom CSS classes over to this component.
+
+    # att -> attributes
+    button_att:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: A list of HTML attributes for the button.
+
+slots:
+  slot_content:
+    title: Content
+    description: The content for the button
+
+  slot_icon_before:
+    title: Icon
+    description: The slot for the button icon
+
+  slot_icon:
+    title: Icon
+    description: The slot for the button icon
