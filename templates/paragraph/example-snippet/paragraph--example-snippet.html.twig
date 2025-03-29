@@ -2,30 +2,35 @@
 /**
  * @file
  * Versatile theme implementation to display a paragraph.
+ * extends/.
  *
  * @see paragraph.html.twig
  */
 #}
 
-{% extends "paragraph.html.twig" %}
-
 {% set gridValue = content.field_grid.0['#markup'] == 1 %}
 
-{% block content %}
-  {% include 'versatile:heading' with {
-    'heading_html_tag': 'h4',
-    'content': content.field_heading.0,
-  } %}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+    view_mode ? 'paragraph--vm--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
 
-  {% if content.field_description.0 %}
-    <div class="mb-1">
-      {{ content.field_description }}
-    </div>
-  {% endif %}
-
-  {% include 'versatile:code_tabs' with {
-    grid: gridValue,
-    code: content.field_code,
-    language: content.field_code_language.0['#markup'],
-  } %}
-{% endblock %}
+{% embed "versatile:card_code" with {
+  'title': content.field_heading.0,
+  'description': content.field_description.0,
+  card_uc: classes,
+} %}
+  {% block slot_code %}
+    {% include 'versatile:code_tabs' with {
+      grid: gridValue,
+      code: content.field_code,
+      language: content.field_code_language.0['#markup'],
+      hide_tab: content.field_hide_tab.0['#markup'],
+    } %}
+  {% endblock %}
+{% endembed %}

@@ -40,7 +40,7 @@
     margin-top: 0;
     margin-bottom: var(--spacer);
 
-    &:last-of-type {
+    &:last-child {
       margin-bottom: 0;
     }
   }
@@ -351,7 +351,7 @@
     font-size: var(--kbd-fs, var(--_codes_fs));
     color: var(--kbd-c, var(--_codes_c));
     background-color: var(--kbd-bg, var(--_codes_bg));
-    border-radius: var(--kbd-br, var(--br-sm));
+    border-radius: var(--kbd-br, var(--br_sm));
 
     & kbd {
       padding: 0;

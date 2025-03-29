@@ -3,41 +3,41 @@
   margin-bottom: var(--_h-mb);
   font-size: var(--_h-fs);
   margin-top: 0;
-  font-family: var(--h-ff);
-  font-style: var(--h-fstyle);
-  font-weight: var(--h-fw);
-  line-height: var(--h-lh);
-  color: var(--h-c);
+  font-family: var(--h_ff);
+  font-style: var(--h_fstyle);
+  font-weight: var(--h_fw);
+  line-height: var(--h_lh);
+  color: var(--h_c);
 }
 
 :where(h1, .h1) {
   --_h-mb: var(--h1_mb);
-  --_h-fs: var(--fs-h1);
+  --_h-fs: var(--h1_fs);
 }
 
 :where(h2, .h2) {
   --_h-mb: var(--h2_mb);
-  --_h-fs: var(--fs-h2);
+  --_h-fs: var(--h2_fs);
 }
 
 :where(h3, .h3) {
   --_h-mb: var(--h3_mb);
-  --_h-fs: var(--fs-h3);
+  --_h-fs: var(--h3_fs);
 }
 
 :where(h4, .h4) {
   --_h-mb: var(--h4_mb);
-  --_h-fs: var(--fs-h4);
+  --_h-fs: var(--h4_fs);
 }
 
 :where(h5, .h5) {
   --_h-mb: var(--h5_mb);
-  --_h-fs: var(--fs-h5);
+  --_h-fs: var(--h5_fs);
 }
 
 :where(h6, .h6) {
   --_h-mb: var(--h6_mb);
-  --_h-fs: var(--fs-h6);
+  --_h-fs: var(--h6_fs);
 }
 
 .lead {

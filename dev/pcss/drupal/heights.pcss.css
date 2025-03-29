@@ -13,3 +13,10 @@
   display: grid;
   gap: 48px;
 }
+
+.in-grid > .w {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacer);
+  align-items: center;
+}

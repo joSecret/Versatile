@@ -1,37 +1,31 @@
 .border {
   border: var(--bw) var(--bs) var(--bc);
 }
-.border-top {
-  border-top: var(--bw) var(--bs) var(--bc);
-}
-.border-end {
-  border-right: var(--bw) var(--bs) var(--bc);
-}
-.border-bottom {
-  border-bottom: var(--bw) var(--bs) var(--bc);
-}
-.border-start {
-  border-left: var(--bw) var(--bs) var(--bc);
-}
 
-.border-0 {
-  border: 0;
+/* Colors */
+.border-white {
+  --bc: var(--c-white);
 }
-.border-top-0 {
-  border-top: 0;
+.border-light {
+  --bc: var(--c-light);
 }
-.border-end-0 {
-  border-right: 0;
+.border-gray {
+  --bc: var(--c-gray);
 }
-.border-bottom-0 {
-  border-bottom: 0;
+.border-dark {
+  --bc: var(--c-dark);
 }
-.border-start-0 {
-  border-left: 0;
+.border-black {
+  --bc: var(--c-black);
 }
-
 .border-primary {
   --bc: var(--c-primary);
+}
+.border-accent {
+  --bc: var(--c-accent);
+}
+.border-neutral {
+  --bc: var(--c-neutral);
 }
 .border-secondary {
   --bc: var(--c-secondary);
@@ -48,14 +42,46 @@
 .border-danger {
   --bc: var(--c-danger);
 }
-.border-light {
-  --bc: var(--c-light);
+
+.border-b {
+  border-block: var(--bw) var(--bs) var(--bc);
 }
-.border-dark {
-  --bc: var(--dark);
+.border-bs {
+  border-block-start: var(--bw) var(--bs) var(--bc);
 }
-.border-white {
-  --bc: var(--c-white);
+.border-be {
+  border-block-end: var(--bw) var(--bs) var(--bc);
+}
+.border-i {
+  border-inline: var(--bw) var(--bs) var(--bc);
+}
+.border-ie {
+  border-inline-end: var(--bw) var(--bs) var(--bc);
+}
+.border-is {
+  border-inline-start: var(--bw) var(--bs) var(--bc);
+}
+
+.border-0 {
+  border: 0;
+}
+.border-b-0 {
+  border-block: 0;
+}
+.border-bs-0 {
+  border-block-start: 0;
+}
+.border-be-0 {
+  border-block-end: 0;
+}
+.border-i-0 {
+  border-inline: 0;
+}
+.border-ie-0 {
+  border-inline-end: 0;
+}
+.border-is-0 {
+  border-inline-start: 0;
 }
 
 .border-1 {
@@ -82,16 +108,16 @@
   border-radius: 0;
 }
 .rounded-1 {
-  border-radius: var(--br-sm);
+  border-radius: var(--br_sm);
 }
 .rounded-2 {
   border-radius: var(--br);
 }
 .rounded-3 {
-  border-radius: var(--br-lg);
+  border-radius: var(--br_lg);
 }
 .rounded-4 {
-  border-radius: var(--br-xl);
+  border-radius: var(--br_xl);
 }
 
 .rounded-circle {
@@ -99,7 +125,7 @@
 }
 
 .rounded-pill {
-  border-radius: var(--br-pill);
+  border-radius: var(--br_pill);
 }
 
 .rounded-top {

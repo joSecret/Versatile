@@ -47,7 +47,7 @@
 .card-header {
   margin-bottom: 0;
   padding: var(--card-cap-py) var(--card-cap-px);
-  color: var(--card-cap-c, var(--h-c));
+  color: var(--card-cap-c, var(--h_c));
   background-color: var(--card-cap-bg);
   border-bottom: solid;
 
