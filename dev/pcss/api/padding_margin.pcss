@@ -4,30 +4,28 @@
   margin: auto;
 }
 
-.mx-auto {
-  margin-right: auto;
-  margin-left: auto;
+.m-b-auto {
+  margin-block: auto;
 }
 
-.my-auto {
-  margin-top: auto;
-  margin-bottom: auto;
+.m-bs-auto {
+  margin-block-start: auto;
 }
 
-.mt-auto {
-  margin-top: auto;
+.m-be-auto {
+  margin-block-end: auto;
 }
 
-.me-auto {
-  margin-right: auto;
+.mi-auto {
+  margin-inline: auto;
 }
 
-.mb-auto {
-  margin-bottom: auto;
+.m-ie-auto {
+  margin-inline-end: auto;
 }
 
-.ms-auto {
-  margin-left: auto;
+.m-is-auto {
+  margin-inline-start: auto;
 }
 
 @each $size $i in $array-size {
@@ -35,56 +33,56 @@
     margin: var(--$(size));
   }
 
-  .mx-$(i) {
+  .m-i-$(i) {
     margin-inline: var(--$(size));
   }
 
-  .my-$(i) {
+  .m-b-$(i) {
     margin-block: var(--$(size));
   }
 
-  .mt-$(i) {
-    margin-top: var(--$(size));
+  .m-bs-$(i) {
+    margin-block-start: var(--$(size));
   }
 
-  .me-$(i) {
-    margin-right: var(--$(size));
+  .m-ie-$(i) {
+    margin-inline-end: var(--$(size));
   }
 
-  .mb-$(i) {
-    margin-bottom: var(--$(size));
+  .m-be-$(i) {
+    margin-block-end: var(--$(size));
   }
 
-  .ms-$(i) {
-    margin-left: var(--$(size));
+  .m-is-$(i) {
+    margin-inline-start: var(--$(size));
   }
 
   .p-$(i) {
     padding: var(--$(size));
   }
 
-  .px-$(i) {
+  .p-i-$(i) {
     padding-inline: var(--$(size));
   }
 
-  .py-$(i) {
+  .p-b-$(i) {
     padding-block: var(--$(size));
   }
 
-  .pt-$(i) {
-    padding-top: var(--$(size));
+  .p-bs-$(i) {
+    padding-block-start: var(--$(size));
   }
 
-  .pe-$(i) {
-    padding-right: var(--$(size));
+  .p-be-$(i) {
+    padding-block-end: var(--$(size));
   }
 
-  .pb-$(i) {
-    padding-bottom: var(--$(size));
+  .p-ie-$(i) {
+    padding-inline-end: var(--$(size));
   }
 
-  .ps-$(i) {
-    padding-left: var(--$(size));
+  .p-is-$(i) {
+    padding-inline-start: var(--$(size));
   }
 
   .gap-$(i) {
@@ -103,88 +101,88 @@
 @each $media in $array-media {
   @media (--$(media)) {
     @each $size $i in $array-size {
-      .m-$(media)-auto {
+      .$(media):m-auto {
         margin: auto;
       }
 
-      .m-$(media)-$(i) {
+      .$(media):m-$(i) {
         margin: var(--$(size));
       }
 
-      .mx-$(media)-auto {
+      .$(media):m-i-auto {
         margin-inline: auto;
       }
 
-      .mx-$(media)-$(i) {
+      .$(media):m-i-$(i) {
         margin-inline: var(--$(size));
       }
 
-      .my-$(media)-auto {
+      .$(media):m-b-auto {
         margin-block: auto;
       }
 
-      .my-$(media)-$(i) {
+      .$(media):m-b-$(i) {
         margin-block: var(--$(size));
       }
 
-      .mt-$(media)-auto {
-        margin-top: auto;
+      .$(media):m-bs-auto {
+        margin-block-start: auto;
       }
 
-      .mt-$(media)-$(i) {
-        margin-top: var(--$(size));
+      .$(media):m-bs-$(i) {
+        margin-block-start: var(--$(size));
       }
 
-      .me-$(media)-auto {
-        margin-right: auto;
+      .$(media):m-ie-auto {
+        margin-inline-end: auto;
       }
 
-      .me-$(media)-$(i) {
-        margin-right: var(--$(size));
+      .$(media):m-ie-$(i) {
+        margin-inline-end: var(--$(size));
       }
 
-      .mb-$(media)-auto {
-        margin-bottom: auto;
+      .$(media):m-be-auto {
+        margin-block-end: auto;
       }
 
-      .mb-$(media)-$(i) {
-        margin-bottom: var(--$(size));
+      .$(media):m-be-$(i) {
+        margin-block-end: var(--$(size));
       }
 
-      .ms-$(media)-auto {
-        margin-left: auto;
+      .$(media):m-is-auto {
+        margin-inline-start: auto;
       }
 
-      .ms-$(media)-$(i) {
-        margin-left: var(--$(size));
+      .$(media):m-is-$(i) {
+        margin-inline-start: var(--$(size));
       }
 
-      .p-$(media)-$(i) {
+      .$(media):p-$(i) {
         padding: var(--$(size));
       }
 
-      .px-$(media)-$(i) {
-        padding-inline: var(--$(size));
-      }
-
-      .py-$(i) {
+      .$(media):p-b-$(i) {
         padding-block: var(--$(size));
       }
 
-      .pt-$(media)-$(i) {
-        padding-top: var(--$(size));
+      .$(media):p-bs-$(i) {
+        padding-block-start: var(--$(size));
       }
 
-      .pe-$(media)-$(i) {
-        padding-right: var(--$(size));
+      .$(media):p-be-$(i) {
+        padding-block-end: var(--$(size));
       }
 
-      .pb-$(media)-$(i) {
-        padding-bottom: var(--$(size));
+      .$(media):p-i-$(i) {
+        padding-inline: var(--$(size));
       }
 
-      .ps-$(media)-$(i) {
-        padding-left: var(--$(size));
+      .$(media):p-ie-$(i) {
+        padding-inline-end: var(--$(size));
+      }
+
+      .$(media):p-is-$(i) {
+        padding-inline-start: var(--$(size));
       }
     }
   }

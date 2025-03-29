@@ -8,7 +8,7 @@ table {
   --table-accent-bg: transparent;
 
   --table-striped-c: var(--table-c);
-  --table-striped-bg: var(--c-light-blue);
+  --table-striped-bg: var(--c-primary-light);
 
   --table-active-c: var(--table-c);
   --table-active-bg: color-mix(
@@ -68,7 +68,7 @@ table {
   & > caption {
     color: var(--c-primary-dark);
     font-size: 16px;
-    background-color: var(--c-light-blue);
+    background-color: var(--c-primary-light);
     min-width: 200px;
     min-height: 62px;
     align-content: center;

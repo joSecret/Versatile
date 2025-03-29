@@ -1,3 +1,70 @@
+/* Colors */
+.text-muted {
+  --text-c: var(--c-muted);
+  color: var(--text-c);
+}
+.text-white {
+  --text-c: var(--c-white);
+  color: var(--text-c);
+}
+.text-light {
+  --text-c: var(--c-light);
+  color: var(--text-c);
+}
+.text-dark {
+  --text-c: var(--c-dark);
+  color: var(--text-c);
+}
+.text-black {
+  --text-c: var(--c-black);
+  color: var(--text-c);
+}
+.text-primary {
+  --text-c: var(--c-primary);
+  color: var(--text-c);
+}
+.text-accent {
+  --text-c: var(--c-accent);
+  color: var(--text-c);
+}
+.text-neutral {
+  --text-c: var(--c-neutral);
+  color: var(--text-c);
+}
+.text-secondary {
+  --text-c: var(--c-secondary);
+  color: var(--text-c);
+}
+.text-success {
+  --text-c: var(--c-success);
+  color: var(--text-c);
+}
+.text-warning {
+  --text-c: var(--c-warning);
+  color: var(--text-c);
+}
+.text-info {
+  --text-c: var(--c-info);
+  color: var(--text-c);
+}
+.text-danger {
+  --text-c: var(--c-danger);
+  color: var(--text-c);
+}
+.text-body {
+  --text-c: var(--body-c);
+  color: var(--text-c);
+}
+
+/* Light Dark 50% */
+.text-white-50 {
+  color: color-mix(in oklab, var(--text-c), var(--c-white));
+}
+.text-black-50 {
+  color: color-mix(in oklab, var(--text-c), var(--c-black));
+}
+
+/* Text transform */
 .text-lowercase {
   text-transform: lowercase;
 }
@@ -22,50 +89,6 @@
   word-break: break-word;
 }
 
-.text-primary {
-  color: var(--c-primary);
-}
-.text-secondary {
-  color: var(--c-secondary);
-}
-.text-success {
-  color: var(--c-success);
-}
-.text-info {
-  color: var(--c-info);
-}
-.text-warning {
-  color: var(--c-warning);
-}
-.text-danger {
-  color: var(--c-danger);
-}
-.text-light {
-  color: var(--c-light);
-}
-.text-dark {
-  color: var(--c-dark);
-}
-.text-black {
-  color: var(--c-black);
-}
-.text-white {
-  color: var(--c-white);
-}
-.text-body {
-  color: var(--c-body-color);
-}
-.text-muted {
-  color: var(--c-gray);
-}
-
-.text-black-50 {
-  color: color-mix(in oklab, var(--c-black), var(--c-white));
-}
-.text-white-50 {
-  color: color-mix(in oklab, var(--c-white), var(--c-black));
-}
-
 .text-start {
   text-align: left;
 }
@@ -77,61 +100,61 @@
 }
 
 @media (--sm) {
-  .text-sm-start {
+  .sm\:text-start {
     text-align: left;
   }
-  .text-sm-end {
+  .sm\:text-end {
     text-align: right;
   }
-  .text-sm-center {
+  .sm\:text-center {
     text-align: center;
   }
 }
 
 @media (--md) {
-  .text-md-start {
+  .md\:text-start {
     text-align: left;
   }
-  .text-md-end {
+  .md\:text-end {
     text-align: right;
   }
-  .text-md-center {
+  .md\:text-center {
     text-align: center;
   }
 }
 
 @media (--lg) {
-  .text-lg-start {
+  .lg\:text-start {
     text-align: left;
   }
-  .text-lg-end {
+  .lg\:text-end {
     text-align: right;
   }
-  .text-lg-center {
+  .lg\:text-center {
     text-align: center;
   }
 }
 
 @media (--xl) {
-  .text-xl-start {
+  .xl\:text-start {
     text-align: left;
   }
-  .text-xl-end {
+  .xl\:text-end {
     text-align: right;
   }
-  .text-xl-center {
+  .xl\:text-center {
     text-align: center;
   }
 }
 
 @media (--xxl) {
-  .text-xxl-start {
+  .xxl\:text-start {
     text-align: left;
   }
-  .text-xxl-end {
+  .xxl\:text-end {
     text-align: right;
   }
-  .text-xxl-center {
+  .xxl\:text-center {
     text-align: center;
   }
 }
