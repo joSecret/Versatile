@@ -29,7 +29,7 @@ props:
         - resposive
 
     content:
-      type: object,
+      type: ['object', 'null']
       title: Content,
 
     menu_items:

@@ -1,4 +1,4 @@
-@layer component {
+@layer components {
   :where(.dropdown) {
     --_dropdown_w: var(--dropdown_w, auto);
     --_dropdown_z-i: var(--dropdown_z-i, var(--z-dropdown, 1));

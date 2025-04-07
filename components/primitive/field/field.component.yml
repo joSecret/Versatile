@@ -6,7 +6,7 @@ props:
   type: object
   properties:
     clear:
-      type: bolean
+      type: boolean
       title: Clear field
       description: Clear field without div and other HTML tags.
 

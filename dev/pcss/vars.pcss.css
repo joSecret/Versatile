@@ -147,4 +147,6 @@
   --sadow-sm: 0 0.2rem 2rem -0.25rem hsla(216, 9%, 44%, 0.1);
   --sadow: 0 0.5rem 2rem -0.25rem #666e7a1a;
   --sadow-lg: 0 0.8rem 2rem -0.25rem hsla(216, 9%, 44%, 0.1);
+
+  --drupal_pbs: var(--drupal-displace-offset-top, 0px);
 }
