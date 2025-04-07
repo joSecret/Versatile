@@ -68,6 +68,10 @@
 
 {% set button_att = button_att.setAttribute('aria-expanded', expanded) %}
 
+{% if aria_control %}
+  {% set button_att = button_att.setAttribute('aria-controls', aria_control) %}
+{% endif %}
+
 {% if id %}
   {% set button_att = button_att.setAttribute('id', id) %}
 {% endif %}

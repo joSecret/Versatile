@@ -1,7 +1,7 @@
 # Libraries for the configuration the versatile theme.
 global-styling:
   css:
-    theme:
+    base:
       css/drupal/heights.css: {}
       css/fonts.css: { minified: true }
       fonts/icon/Icon.css: { minified: true }
@@ -12,13 +12,12 @@ global-styling:
       css/images.css: { minified: true }
       css/containers.css: { minified: true }
       css/grid.css: { minified: true }
-      css/buttons.css: { minified: true }
       css/transitions.css: { minified: true }
       css/helpers.css: { minified: true }
 
 theme-fonts:
   css:
-    theme:
+    base:
       "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap":
         { type: external, minified: true }
 

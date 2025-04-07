@@ -16,9 +16,10 @@ props:
       default: ''
 
     language:
-      type: string
+      type: ['string', 'null']
       title: Language
       enum:
+        - null
         - 'html'
         - 'twig'
         - 'php'
@@ -29,7 +30,7 @@ props:
       default: 'right'
 
     hide_tab:
-      type: string
+      type: ['string', 'null']
       title: Hide tab
       example:
         - 'preview'

@@ -51,6 +51,7 @@ module.exports = (filePath, callback) => {
           'image-set-function': false,
           'prefers-color-scheme-query': false,
           'logical-properties-and-values': false,
+          'cascade-layers': false,
         }
       }),
       postcssCalc,

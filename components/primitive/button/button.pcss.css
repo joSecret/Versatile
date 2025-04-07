@@ -1,5 +1,7 @@
-@layer default {
-  :is(.btn, .btn-outline) {
+@layer base, components;
+
+@layer components {
+  :where(.btn, .btn-outline) {
     --def--btn_c-text: var(--body-c, #1f2937);
     --def--btn-c-text_r: #fff;
     --def--btn_c-bg: transparent;

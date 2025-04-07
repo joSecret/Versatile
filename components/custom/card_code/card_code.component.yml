@@ -11,7 +11,7 @@ props:
       title: Card Title
 
     description:
-      type: string
+      type: ['string', 'null']
       title: Card description
 
     code:

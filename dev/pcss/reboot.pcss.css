@@ -1,4 +1,6 @@
-@layer default {
+@layer base, layout, components, utilities;
+
+@layer base {
   *,
   *::before,
   *::after {
@@ -168,10 +170,15 @@
 
   :where(button) {
     border-radius: 0px;
+    background-color: red;
 
     &:focus:not(:focus-visible) {
       outline: 0;
     }
+  }
+
+  :where(button, select) {
+    text-transform: none;
   }
 
   :where(input, button, select, optgroup, textarea) {
@@ -179,11 +186,6 @@
     font-family: inherit;
     font-size: 1em;
     line-height: inherit;
-  }
-
-  button,
-  select {
-    text-transform: none;
   }
 
   [role='button'] {

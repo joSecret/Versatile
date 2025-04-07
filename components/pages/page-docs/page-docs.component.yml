@@ -9,6 +9,7 @@ description: 'A responsive documentation page layout with sidebar navigation and
 props:
   type: object
   properties:
+    # properties
     style:
       type: string
       title: Pabe style
@@ -18,6 +19,37 @@ props:
         - ''
         - bordered
         - cell
+
+    # values
+    branding:
+      type: object
+      title: Page branding
+      description: 'The branding section/region of the page.'
+      default: ''
+
+    header:
+      type: object
+      title: Page header
+      description: 'The header section/region of the page.'
+      default: ''
+
+    sidebar:
+      type: object
+      title: Page sidebar
+      description: 'The sidebar section/region of the page.'
+      default: ''
+
+    content:
+      type: object
+      title: Page content
+      description: 'The content section/region of the page.'
+      default: ''
+
+    header_top:
+      type: object
+      title: Page header top
+      description: 'The header top section/region of the page.'
+      default: ''
 
     # uc -> utility_classes
     page_uc:
@@ -37,14 +69,22 @@ slots:
     title: Page Branding
     description: 'The branding section/region of the page.'
 
-  page_header:
+  slot_header:
     title: Page Header
     description: 'The header section of the page.'
 
-  page_sidebar:
+  slot_sidebar:
     title: Page Footer
     description: 'The footer section of the page, contains information that appears on the bottom of each page.'
 
-  page_content:
+  slot_header_top:
+    title: Page header top
+    description: 'The main header top area of the page.'
+
+  slot_content:
     title: Page Content
     description: 'The main content area of the page.'
+
+  slot_mobile_menu:
+    title: Page mobile menu
+    description: 'The mobile menu area of the page.'

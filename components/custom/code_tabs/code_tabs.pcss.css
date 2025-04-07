@@ -12,6 +12,7 @@
   --_tabs-ul_gap: var(--tabs-ul_gap, 6px);
   --_tabs-ul_bg: var(--tabs-ul_bg, var(--c-gray-200));
 
+  isolation: isolate;
   display: var(--_tabs_d);
   gap: var(--_tabs_gap);
   padding: var(--_tabs_p);

@@ -12,6 +12,7 @@ props:
       description: Versatile includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.
       default: null
       enum:
+        - null
         - primary
         - secondary
         - success
@@ -68,6 +69,12 @@ props:
       title: style
       description: "Button is rounded only for button with icon position value 'only'"
       default: false
+
+    aria_control:
+      type: ['string', 'null']
+      title: Aria control
+      description: Button aria-controls
+      default: null
 
     # values
     content:

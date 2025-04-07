@@ -1,4 +1,4 @@
-@layer component {
+@layer components {
   :where(.nav) {
     --_nav_mb: var(--nav-mb, 0px);
     --_nav_d: var(--_nav_d, row);
